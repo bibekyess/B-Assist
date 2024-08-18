@@ -1,0 +1,32 @@
+
+services:
+  backend:
+    image: bibekyess/b-assist-backend:v0.0.1  
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    networks:
+      - bassist-network
+
+  frontend:
+    image: bibekyess/b-assist-frontend:v0.0.1  
+    build:
+      context: ./frontend
+    depends_on:
+      - backend
+    networks:
+      - bassist-network
+    environment:
+      - DISPLAY=host.docker.internal:0  # For Windows/Mac
+      # - DISPLAY=:0                      # For Linux 
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # Required for Docker on Windows/Mac
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    user: "programmable-matter"  # Ensure this user ID matches the user inside your Dockerfile
+    working_dir: /programmable-matter  # Ensure this matches the working directory inside your Dockerfile
+
+networks:
+  bassist-network:
+    driver: bridge
