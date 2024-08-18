@@ -63,9 +63,9 @@ B-Assist aims to provide an intuitive user experience for writing tasks, making 
 
 Press `cmd+shift+X` to open the B-Assist window on any text-editor of our choice. You can then select "Fix Spelling Mistakes" or "Translate English to Korean" to use the respective features and replace the selcted texts.
 
-## Demo B-Assist window
+## Demo B-Assist Usage
 
-![Demo](./bassist_usage.png)
+![Demo](./demo.gif)
 
 ## Deployment
 
