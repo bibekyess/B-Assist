@@ -74,11 +74,13 @@ Press `cmd+shift+X` to open the B-Assist window on any text-editor of our choice
 Docker support is coming soon! Stay tuned for updates on containerized deployment.
 
 ## Acknowledgements
-
-- [llama-assistant by Vaibhavs10](https://github.com/Vaibhavs10/llama-assistant)
+- [chatd by BruceMacD](https://github.com/BruceMacD/chatd)
 - [ai-typing-assistant by patrickloeber](https://github.com/patrickloeber/ai-typing-assistant)
-- [llama-cpp-python by abetlen](https://github.com/abetlen/llama-cpp-python)
 
 ## Contributing
 
 If you would like to contribute to B-Assist, please submit a pull request or open an issue on GitHub. Your feedback and contributions are greatly appreciated!
+
+
+## Dev Notes
+Tested with node version 'v20.16.0' and npm version '10.8.1'

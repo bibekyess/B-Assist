@@ -1,0 +1,37 @@
+{
+  "name": "b-assist",
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "postinstall": "electron-builder install-app-deps",
+    "test": "electron ./tests/test_ollama.js",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "dependencies": {
+    "@opendocsg/pdf2md": "^0.1.28",
+    "@orama/orama": "^2.0.7",
+    "@xenova/transformers": "^2.6.2",
+    "electron-squirrel-startup": "^1.0.1",
+    "langchain": "^0.0.170",
+    "mammoth": "^1.6.0",
+    "odt2html": "^1.0.1",
+    "ollama": "^0.4.6",
+    "robotjs": "^0.6.0",
+    "winston": "^3.11.0",
+    "xhr2": "^0.2.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "electron": "^24.1.1"
+  }
+}
