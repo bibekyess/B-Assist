@@ -27,4 +27,17 @@ module.exports = {
       config: {},
     },
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'bibekyess',
+          name: 'B-Assist'
+        },
+        prerelease: false,
+        draft: true
+      }
+    }
+  ]
 };

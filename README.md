@@ -1,12 +1,13 @@
-# B-Assist for Mac
+# B-Assist for Mac/Windows
 
-B-Assist is a writing assistant designed to enhance your productivity by integrating generative models into your preferred text editor. It offers features like spelling correction and English-to-Korean translation. The application is built with an Electron frontend and a FastAPI backend, ensuring a smooth and seamless user experience.
+`B-Assist` is a `Better-Assistant` designed to provide a new writing experience by integrating generative models into your preferred text editor. It offers writing features like fixing grammars/spellings and English-to-Korean translation. The application opens a doorway for normal people to easily ride on this emerging world of GenAI.
 
-B-Assist aims to provide an intuitive user experience for writing tasks, making it an excellent tool for writers, students, and professionals who frequently work with text.
+Ideal for writers, students, and professionals, B-Assist provides an intuitive and seamless user experience for various writing tasks.
+
 
 ## Features
 
-- **Fix Spelling Mistakes**: Automatically corrects spelling errors in your text.
+- **Fix Grammar Mistakes**: Automatically corrects grammar errors in your text.
 - **Translate English to Korean**: Translates English text into Korean with ease.
 
 ### Coming Soon
@@ -18,50 +19,24 @@ B-Assist aims to provide an intuitive user experience for writing tasks, making 
 
 ## Setup
 
-### Backend
+### BUILD
 
-1. Navigate to the backend directory:
-    ```bash
-    cd ./backend/app
-    ```
-
-2. Install the required Python packages:
-    ```bash
-    pip install --no-cache-dir -r requirements.txt
-    CMAKE_ARGS="-DGGML_METAL=on" pip install llama-cpp-python
-    ```
-    Note: If you are on CUDA/CPU, you can remove the `CMAKE_ARGS="-DGGML_METAL=on"` part and replace it with appropriate CMake args [here](https://llama-cpp-python.readthedocs.io/en/latest/#supported-backends).
-
-3. Start the FastAPI server:
-    ```bash
-    python api.py
-    ```
-
-   The backend will be accessible via the specified port (default: 5000).
-
-### Frontend
-
-1. Navigate to the frontend directory:
-    ```bash
-    cd ./frontend/src
-    ```
-
-2. Install the necessary Node.js packages:
+1. Install the necessary Node.js packages:
     ```bash
     npm install
-    npm postinstall
     ```
 
-3. Start the Electron application:
+2. Start the Electron application:
     ```bash
     npm start
     ```
 
-   The frontend will launch, providing access to the B-Assist features.
+    This will launch the application, giving you access to all the B-Assist features.
+
 
 ### Usage
 
-Press `cmd+shift+X` to open the B-Assist window on any text-editor of our choice. You can then select "Fix Spelling Mistakes" or "Translate English to Korean" to use the respective features and replace the selcted texts.
+To use B-Assist within any text editor, press `cmd+shift+X` (Mac) or `ctrl+shift+X` (Windows). The B-Assist window will open, allowing you to select features like "Fix Grammar and Spelling" or "Translate English to Korean" to process and replace selected text.
 
 ## Demo B-Assist Usage
 
@@ -69,9 +44,11 @@ Press `cmd+shift+X` to open the B-Assist window on any text-editor of our choice
 
 ## Deployment
 
-### Docker Support
+### Creating a Package/Release
+1. Run `npm run package` to package the app. The packaged app will be available in the `out` directory.
+3. Run `npm run publish` to publish the app to the GitHub repository. This will create a new release with the packaged app.
 
-Docker support is coming soon! Stay tuned for updates on containerized deployment.
+
 
 ## Acknowledgements
 - [chatd by BruceMacD](https://github.com/BruceMacD/chatd)
