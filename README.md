@@ -65,7 +65,7 @@ Press `cmd+shift+X` to open the B-Assist window on any text-editor of our choice
 
 ## Demo B-Assist Usage
 
-![Demo](./demo.gif)
+![Demo](./src/assets/demo.gif)
 
 ## Deployment
 
