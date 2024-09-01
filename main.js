@@ -14,7 +14,7 @@ global.modelName = "qwen2:0.5b-instruct-q8_0"
 
 let mainWindow;
 let selectedText = '';
-const CLIPBOARD_DELAY = 200; // In ms; DELAY is needed to ensure the clipboard has been updated
+const CLIPBOARD_DELAY = 500; // In ms; DELAY is needed to ensure the clipboard has been updated
 const EMPTY_CLIPBOARD_PLACEHOLDER = 'EMPTY';
 // Current assumption is that user put mouse on the editor where they want their texts to be replaced
 let cursor_x = 0;
@@ -81,9 +81,12 @@ app.whenReady().then(() => {
     console.log("App Shortcut triggered!");
 
     // Clear the clipboard to avoid reading old contents; VI to prevent processing unrelated contents
-    setTimeout(() => {
-      clipboard.writeText(EMPTY_CLIPBOARD_PLACEHOLDER);
-    }, CLIPBOARD_DELAY);
+    // Works fine without it in Windows // FIXME Needs more checking
+    if (process.platform === 'darwin') {
+      setTimeout(() => {
+        clipboard.writeText(EMPTY_CLIPBOARD_PLACEHOLDER);
+      }, CLIPBOARD_DELAY);
+    }
 
     // Simulate copy to get the selected text
     setTimeout(() => {
@@ -135,11 +138,11 @@ async function replaceText(action, processedText) {
       // Perform a left click to focus on the text area;
       // Very Important, elsewise robotjs cannot find a cursor position to replace the with processed text
       robot.mouseClick();
-
-      setTimeout(() => {
-        // Directly type the processed text instead of pasting for streaming look
-        robot.typeString(processedText);
-      }, CLIPBOARD_DELAY);
+      robot.typeString(processedText);
+      // setTimeout(() => {
+      //   // Directly type the processed text instead of pasting for streaming look
+      //   robot.typeString(processedText);
+      // }, CLIPBOARD_DELAY);
       
     }, CLIPBOARD_DELAY);
     

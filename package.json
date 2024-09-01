@@ -4,7 +4,6 @@
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
-    "postinstall": "electron-builder install-app-deps",
     "test": "electron ./tests/test_ollama.js",
     "package": "electron-forge package",
     "make": "electron-forge make",
@@ -20,7 +19,7 @@
     "mammoth": "^1.6.0",
     "odt2html": "^1.0.1",
     "ollama": "^0.4.6",
-    "robotjs": "^0.6.0",
+    "robotjs": "github:octalmage/robotjs",
     "winston": "^3.11.0",
     "xhr2": "^0.2.1"
   },
