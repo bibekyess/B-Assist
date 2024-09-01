@@ -6,7 +6,6 @@ const os = require("os");
 const path = require("path");
 const { exec } = require("child_process");
 const { logInfo, logErr, logDebug } = require("../logger.js");
-// const axios = require('axios');
 global.XMLHttpRequest = require('xhr2');
 
 
