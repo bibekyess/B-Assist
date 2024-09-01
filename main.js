@@ -1,6 +1,5 @@
 const { app, BrowserWindow, globalShortcut, ipcMain, screen, clipboard, session } = require('electron');
 const path = require('path');
-const axios = require('axios');
 const robot = require('robotjs');
 const {
   serveOllama,

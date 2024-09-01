@@ -1,6 +1,9 @@
 module.exports = {
   packagerConfig: {
-    asar: true,
+    asar: false,
+    // extraResource: [
+    //   'backend/'
+    // ]
   },
   rebuildConfig: {},
   makers: [
@@ -22,10 +25,10 @@ module.exports = {
     },
   ],
   plugins: [
-    {
-      name: '@electron-forge/plugin-auto-unpack-natives',
-      config: {},
-    },
+    // {
+    //   name: '@electron-forge/plugin-auto-unpack-natives',
+    //   config: {},
+    // },
   ],
   publishers: [
     {
